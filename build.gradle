@@ -1,0 +1,42 @@
+
+apply plugin: 'java'
+//sets the main class of this project (the entry point)
+//apply plugin: 'application'
+//mainClassName = ""
+//downloading and needed dependencies from mavenCentral
+repositories{
+	mavenCentral()
+}
+
+
+dependencies{
+//only need junit for when we are testing, so 
+//its only a dependency for the testCompile group
+	testCompile 'junit:junit:4.12'
+}
+//a fun little function
+task plumbus << {
+	println "A plumbus for you!"
+}
+task turtle << {
+	//this turtle was found online designed by a guy named jurcy.  
+	//Thank you for the turtle jurcy
+	def turtle = """
+                               ___-------___
+                           _-~~             ~~-_
+                        _-~                    /~-_
+     /^\\__/^\\         /~  \\                   /    \\
+   /|  O|| O|        /      \\_______________/        \\
+  | |___||__|      /       /                \\          \\
+  |          \\    /      /                    \\          \\
+  |   (_______) /______/                        \\_________ \\
+  |         / /         \\                      /            \\
+   \\         \\^\\\\         \\                  /               \\     /
+     \\         ||           \\______________/      _-_       //\\__//
+       \\       ||------_-~~-_ ------------- \\ --/~   ~\\    || __/
+         ~-----||====/~     |==================|       |/~~~~~
+          (_(__/  ./     /                    \\_\\      \\.
+                 (_(___/      -Turtle-           \\_____)_)
+"""
+	println turtle
+}

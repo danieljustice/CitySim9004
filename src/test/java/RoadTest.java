@@ -43,7 +43,7 @@ public class RoadTest{
 	}
 
 	//MOCKITO
-	//Asserts that To and cannot be set to the same (unless they are null)
+	//Asserts that To and From cannot be set to the same (unless they are null)
 	@Test
 	public void testUnequalToAndFrom(){
 		Road fifth = new Road();
@@ -62,12 +62,11 @@ public class RoadTest{
 		fifth.setFrom(fifth.getTo());
 		assertNotEquals(fifth.getFrom(),  fifth.getTo());
 
-		//CANNOT set To or From to null, odd
 		//test that to and from can both be put to null
-		//fifth.setTo(null);
-		//fifth.setFrom(null);
-		//assertNull(fifth.getTo());
-		//assertNull(fifth.getFrom());
+		fifth.setTo(null);
+		fifth.setFrom(null);
+		assertNull(fifth.getTo());
+		assertNull(fifth.getFrom());
 
 	}
 

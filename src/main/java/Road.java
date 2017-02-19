@@ -15,10 +15,14 @@ public class Road{
 	}
 
 	public void setFrom(Building building){
-		if(!building.equals(to)){
-			from = building;
+		if(building == null){
+			from = null;
 		}else{
-			System.out.println("A road cannot go to and from the same building.");
+			if(!building.equals(to)){
+				from = building;
+			}else{
+				System.out.println("A road cannot go to and from the same building.");
+			}
 		}
 	}
 
@@ -27,12 +31,15 @@ public class Road{
 	}
 
 	public void setTo(Building building){
-		if(!building.equals(from)){
-			to = building;
+		if(building == null){
+			to = null;
 		}else{
-			System.err.println("A road cannot go to and from the same building.");
+			if(!building.equals(from)){
+				to = building;
+			}else{
+				System.err.println("A road cannot go to and from the same building.");
+			}
 		}
-		
 	}
 
 	public Building getTo(){

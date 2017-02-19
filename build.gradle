@@ -6,6 +6,7 @@ apply plugin: 'java'
 //downloading and needed dependencies from mavenCentral
 repositories{
 	mavenCentral()
+	jcenter()
 }
 
 
@@ -13,6 +14,7 @@ dependencies{
 //only need junit for when we are testing, so 
 //its only a dependency for the testCompile group
 	testCompile 'junit:junit:4.12'
+	testCompile "org.mockito:mockito-core:2.+"
 }
 //a fun little function
 task plumbus << {

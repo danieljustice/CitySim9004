@@ -2,11 +2,9 @@ package CitySim9004;
 
 public class Road{
 
-	public enum RoadType{
-		OneWay, TwoWay
-	}
 	private String name;
-	private RoadType roadType = RoadType.OneWay;
+	private Building from = null;
+	private Building to = null;
 
 	public String getName(){
 		return name;
@@ -16,10 +14,28 @@ public class Road{
 		name = roadName;
 	}
 
-	public RoadType getRoadType(){
-		return roadType;
+	public void setFrom(Building building){
+		if(!building.equals(to)){
+			from = building;
+		}else{
+			System.out.println("A road cannot go to and from the same building.");
+		}
 	}
-	public void setRoadType(RoadType roadType){
-		this.roadType = roadType;
+
+	public Building getFrom(){
+		return from;
+	}
+
+	public void setTo(Building building){
+		if(!building.equals(from)){
+			to = building;
+		}else{
+			System.err.println("A road cannot go to and from the same building.");
+		}
+		
+	}
+
+	public Building getTo(){
+		return to;
 	}
 }

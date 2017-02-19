@@ -35,8 +35,10 @@ public class BuildingTest{
 		Building sennott = new Building();
 		Road mockRoad1 = mock(Road.class);
 		Road mockRoad2 = mock(Road.class);
-
+		
+		assertEquals(sennott.numOfRoads(), 0);
 		sennott.addRoad(mockRoad1);
+		assertEquals(sennott.numOfRoads(), 1);
 		sennott.addRoad(mockRoad2);
 		assertEquals(sennott.numOfRoads(), 2);
 	}

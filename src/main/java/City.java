@@ -30,7 +30,7 @@ public class City{
 			if(i > buildings.size()){
 				return null;
 			}	
-			result = buildings.get((seed + i)%buildings.size());
+			result = buildings.get((Math.abs(seed) + i)%buildings.size());
 			i++;
 		}
 
@@ -63,6 +63,7 @@ public class City{
 			for(int i = 0; i < output.length; i++){
 				System.out.println(car.getName() + " " + output[i]);
 			}
+			seedInt = rand.nextInt();
 		}
 		System.out.println(car.printSennottVisits());
 		System.out.println("-----");

@@ -36,9 +36,11 @@ public class CityTest{
 		pittsburgh.addBuilding(mockBuilding2);
 		assertEquals(pittsburgh.numOfBuildings(), 2);
 	}
-
+	//STUB
 	//SPLIT this into three test, check for null when list is empty, check for null when
 	//no good options in list, check that it only chooses good options
+	//Due to time I did not split these up.  This test makes sure chooseStartingBuilding
+	//works and returns either a building in the city or null
 	@Test
 	public void testChooseStartingBuilding(){
 		City pittsburgh = new City();
@@ -61,7 +63,7 @@ public class CityTest{
 		assertEquals(pittsburgh.chooseStartingBuilding(0), mockBuilding1);
 		assertEquals(pittsburgh.chooseStartingBuilding(1), mockBuilding1);
 	}
-
+	//STUB
 	//A city should be able to look at a building and choose one of the connected buildings via a road
 	//If there are no roads then return null
 	//This test builds a triangle of buildings where both building 1 and 2 point to the other two buildings
@@ -187,6 +189,6 @@ public class CityTest{
 		pittsburgh.driveCar(testCar2, 1);
 		pittsburgh.driveCar(testCar2, 2);
 	}
-	
+
 
 }

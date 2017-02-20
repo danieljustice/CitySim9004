@@ -2,7 +2,7 @@
 apply plugin: 'java'
 //sets the main class of this project (the entry point)
 apply plugin: 'application'
-mainClassName = "CitySim9004.main"
+mainClassName = "CitySim9004.CitySim9004"
 //downloading and needed dependencies from mavenCentral
 repositories{
 	mavenCentral()
@@ -43,10 +43,11 @@ task turtle << {
 	println turtle
 }
 
-//print regular statements
-test {
-  testLogging.showStandardStreams = true
-}
+//currently dont want to print out statements on test
+// //print regular statements
+// test {
+//   testLogging.showStandardStreams = true
+// }
 run {
     if (project.hasProperty("appArgs")) {
         args Eval.me(appArgs)

@@ -69,6 +69,7 @@ public class RoadTest{
 		assertNull(fifth.getFrom());
 
 	}
+	//STUB
 	//Printing out the traversal of a road can have two outcomes
 	//1: If it is between two innercity buildings a single string will come back descrbing it
 	//2: If it is between an innercity building and another city, two strings 

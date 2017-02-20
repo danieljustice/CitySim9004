@@ -48,6 +48,12 @@ task turtle << {
 // test {
 //   testLogging.showStandardStreams = true
 // }
+
+test {
+    testLogging {
+         events "PASSED", "FAILED", "SKIPPED"
+    }
+}
 run {
     if (project.hasProperty("appArgs")) {
         args Eval.me(appArgs)

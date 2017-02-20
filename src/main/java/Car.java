@@ -24,4 +24,14 @@ public class Car{
 			sennottCount = 0;
 		}
 	}
+
+	public String printSennottVisits(){
+		String returnString =(name + " met with Professor Laboon " + sennottCount + " time(s).");
+		if(sennottCount == 0){
+			returnString = returnString + ("\nThat student missed out!");
+		}else if(sennottCount >= 3){
+			returnString = returnString +("\nWow, that driver needed lots of CS help!");
+		}
+		return returnString;
+	}
 }

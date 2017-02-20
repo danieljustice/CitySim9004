@@ -44,5 +44,21 @@ public class CarTest{
 		driver1.incrementSennottCount(-3);
 		assertEquals(driver1.getSennottCount(), 0);
 	}
+	//There are three different options for what this can print out
+	//Cases are at 0, between 1 and 2, and 3 and above
+	//Tests three cases, number of visits are 0, 1 and 3
+	@Test
+	public void testPrintSennottVisits(){
+		Car testCar = new Car();
+		testCar.setName("Bob");
+		String zeroVisits = "Bob met with Professor Laboon 0 time(s).\nThat student missed out!";
+		String oneVisits = "Bob met with Professor Laboon 1 time(s).";
+		String threeVisits = "Bob met with Professor Laboon 3 time(s).\nWow, that driver needed lots of CS help!";
+		assertEquals(testCar.printSennottVisits(), zeroVisits);
+		testCar.incrementSennottCount(1);
+		assertEquals(testCar.printSennottVisits(), oneVisits);
+		testCar.incrementSennottCount(2);
+		assertEquals(testCar.printSennottVisits(), threeVisits);
 
+	}
 }

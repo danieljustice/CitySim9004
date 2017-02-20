@@ -64,7 +64,7 @@ public class City{
 				System.out.println(car.getName() + " " + output[i]);
 			}
 		}
-		System.out.println(car.getName() + " met with Professor Laboon " + car.getSennottCount() + " time(s).");
+		System.out.println(car.printSennottVisits());
 		System.out.println("-----");
 	}
 }	

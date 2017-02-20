@@ -18,23 +18,31 @@ public class CarTest{
 	}
 	//A Car needs to be identified with a string name
 	//The name that the car is set to should be the same name that is retrieved
+	@Test
 	public void testCarHasName(){
 		Car driver1 = new Car();
 		driver1.setName("Driver1");
 		assertEquals(driver1.getName(), "Driver1");
 	}
-	//MOCKITO
-	//A Car needs to know which city it is in so it can go from building to building
-	//This tests that a City can be assigned to a car and retrieved.
-	//The City set should be the same City retrieved
-	public void testCarHasCity(){
+	//A count of how many times a car visits sennott should be kept.
+	//This count should be able to be incremented and decremented, but should never be less than 0
+	@Test
+	public void testSennottCount(){
 		Car driver1 = new Car();
-		City mockCity = mock(City.class);
-
-		driver1.setCity(mockCity);
-		assertEquals(driver1.getCity(), mockCity);
+		//sennottCount should start at 0
+		assertEquals(driver1.getSennottCount(), 0);	
+		//after incrementing it by 1 it should be equal to 1
+		driver1.incrementSennottCount(1);
+		assertEquals(driver1.getSennottCount(), 1);	
+		//after incrementing by 2 it should be equal to 3
+		driver1.incrementSennottCount(2);
+		assertEquals(driver1.getSennottCount(), 3);
+		//after decrementing by 3 it should be equal to 0
+		driver1.incrementSennottCount(-3);
+		assertEquals(driver1.getSennottCount(), 0);
+		//after decrementing by 3 it should be 0, cannot visit Sennott less than 0 times
+		driver1.incrementSennottCount(-3);
+		assertEquals(driver1.getSennottCount(), 0);
 	}
 
-
-	
 }

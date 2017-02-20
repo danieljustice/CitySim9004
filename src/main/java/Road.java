@@ -21,6 +21,7 @@ public class Road{
 			if(!building.equals(to)){
 				from = building;
 			}else{
+				System.out.println("To: " + to.getName() + " Building: " + building.getName());
 				System.out.println("A road cannot go to and from the same building.");
 			}
 		}
@@ -37,6 +38,7 @@ public class Road{
 			if(!building.equals(from)){
 				to = building;
 			}else{
+				System.out.println("Road: " + name + " From: " + from.getName() + " Building: " + building.getName());
 				System.err.println("A road cannot go to and from the same building.");
 			}
 		}
@@ -54,7 +56,7 @@ public class Road{
 		}else{
 			result = new String[2];
 			result[0] = ("heading from " + from.getName() + " to Outside City via " + name + ".");
-			result[1] = ("has gone to " + to.getName());
+			result[1] = ("has gone to " + to.getName() + "!");
 		}
 		return result;
 	}

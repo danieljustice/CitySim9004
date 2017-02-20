@@ -22,7 +22,7 @@ public class City{
 			return null;
 		}
 		//logic to 	x
-		result = buildings.get(seed%buildings.size());
+		result = buildings.get(Math.abs(seed)%buildings.size());
 		int i = 1;
 		while(!result.getIsInCity()){
 			//if we loop through and dont find a good building, 
@@ -45,5 +45,26 @@ public class City{
 		return nextBuilding;
 	}
 
+	public void driveCar(Car car, int seed){
+		Random rand = new Random();
+		rand.setSeed(seed);
+		Building currentBuilding = chooseStartingBuilding(rand.nextInt());
+		
+		int seedInt = rand.nextInt();
+		String[] output = new String[1];
 
-}
+		while(output.length != 2){
+			if(currentBuilding.getName().equals("Sennott")){
+				car.incrementSennottCount(1);
+			}
+			output = currentBuilding.chooseRoad(seedInt).toStrings();
+			currentBuilding = chooseNextBuilding(currentBuilding, seedInt);
+
+			for(int i = 0; i < output.length; i++){
+				System.out.println(car.getName() + " " + output[i]);
+			}
+		}
+		System.out.println(car.getName() + " met with Professor Laboon " + car.getSennottCount() + " time(s).");
+		System.out.println("-----");
+	}
+}	

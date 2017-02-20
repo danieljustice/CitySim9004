@@ -99,7 +99,7 @@ public class RoadTest{
 		phil.setTo(mockHillman);
 
 		//Tests a traversal between a city in the city to another city
-		String[] fourthTraversed = fourth.toString();
+		String[] fourthTraversed = fourth.toStrings();
 		assertEquals(fourthTraversed[0], "heading from Union to Outside City via Fourth Ave.") ;
 		assertEquals(fourthTraversed[1], "has gone to Philadelphia!") ;
 		//Tests a traversal between two in city buildings

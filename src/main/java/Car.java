@@ -4,9 +4,7 @@ import java.util.*;
 
 public class Car{
 	private String name;
-	private City city;
-	private Building currentBuilding;
-
+	private int sennottCount = 0;
 
 	public void setName(String name){
 		this.name = name;
@@ -16,15 +14,14 @@ public class Car{
 		return name;
 	}
 
-	public void setCity(City city){
-		this.city = city;
+	public int getSennottCount(){
+		return sennottCount;
 	}
 
-	public City getCity(){
-		return city;
+	public void incrementSennottCount(int increment){
+		sennottCount += increment;
+		if(sennottCount < 0){
+			sennottCount = 0;
+		}
 	}
-	public void chooseStartingPoint(int woot){
-		
-	}
-
 }

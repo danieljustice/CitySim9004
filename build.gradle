@@ -42,3 +42,8 @@ task turtle << {
 """
 	println turtle
 }
+
+//print regular statements
+test {
+  testLogging.showStandardStreams = true
+}

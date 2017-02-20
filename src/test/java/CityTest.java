@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 import CitySim9004.Building;
 import CitySim9004.Road;
 import CitySim9004.City;
+import CitySim9004.Car;
 
 public class CityTest{
 
@@ -121,6 +122,70 @@ public class CityTest{
 		//Traverse from arbitray building (mockBuilding2) to another (mockBuilding3)
 		currentMockBuilding = pittsburgh.chooseNextBuilding(mockBuilding2, 1);
 		assertEquals(currentMockBuilding, mockBuilding3);
+	}
+
+	//A car should start at a building in the city (Sennott or Union) and then 
+	//move around until it goes outside the city (Philadelphia)
+	//Given the same seed a car should make the same route, given a different 
+	//seed a car should possibly take a different route
+	@Test
+	public void testDriveCar(){
+
+		//SET UP
+		City pittsburgh = new City();
+
+		Building sennott = new Building();
+		sennott.setName("Sennott");
+
+		Building union = new Building();
+		union.setName("Union");
+
+		Building philly = new Building();
+		philly.setName("Philadelphia");
+		philly.setIsInCity(false);
+
+		Road fourth = new Road();
+		fourth.setName("Fourth Ave");
+		fourth.setFrom(union);
+		fourth.setTo(philly);
+		Road phil1 = new Road();
+		phil1.setName("Phil St");
+		phil1.setFrom(union);
+		phil1.setTo(sennott);
+		Road phil2 = new Road();
+		phil2.setName("Phil St");
+		phil2.setFrom(sennott);
+		phil2.setTo(union);
+		Road fifth = new Road();
+		fifth.setName("Fifth Ave");
+		fifth.setFrom(sennott);
+		fifth.setTo(philly);
+
+
+		sennott.addRoad(phil2);
+		sennott.addRoad(fifth);
+		union.addRoad(fourth);
+		union.addRoad(phil1);
+
+		pittsburgh.addBuilding(sennott);
+		pittsburgh.addBuilding(union);
+		pittsburgh.addBuilding(philly);
+
+		Car testCar1 = new Car();
+		testCar1.setName("Driver 1");
+		Car testCar2 = new Car();
+		testCar2.setName("Driver 2");		
+		//SET UP Complete
+		//START TEST
+
+		//printouts for testCar1 and testCar2 should be the same (except for teh car name)
+		pittsburgh.driveCar(testCar1, 0);
+		pittsburgh.driveCar(testCar1, 1);
+		pittsburgh.driveCar(testCar1, 2);
+
+		pittsburgh.driveCar(testCar2, 0);
+		pittsburgh.driveCar(testCar2, 1);
+		pittsburgh.driveCar(testCar2, 2);
 	}
 
 	// @Test

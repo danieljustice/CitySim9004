@@ -45,4 +45,17 @@ public class Road{
 	public Building getTo(){
 		return to;
 	}
+
+	public String[] toStrings(){
+		String[] result;
+		if(to.getIsInCity() == true){
+			result = new String[1];
+			result[0] = ("heading from " + from.getName() + " to " + to.getName() + " via " + name + ".");
+		}else{
+			result = new String[2];
+			result[0] = ("heading from " + from.getName() + " to Outside City via " + name + ".");
+			result[1] = ("has gone to " + to.getName());
+		}
+		return result;
+	}
 }

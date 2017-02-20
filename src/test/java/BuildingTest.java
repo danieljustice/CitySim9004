@@ -66,4 +66,18 @@ public class BuildingTest{
 		Building starbucks = new Building();
 		assertNull(starbucks.chooseRoad(0));	
 	}
+	//A building is either in a city or not (buildings not in a city will be used to travel to other cities)
+	//Building should be initialized to being in a city (true) and then should reflect
+	//any value it is set to (true or false)
+	@Test
+	public void testIsInCity(){
+		Building sennott = new Building();
+		assertTrue(sennott.getIsInCity());
+
+		sennott.setIsInCity(false);
+		assertFalse(sennott.getIsInCity());
+
+		sennott.setIsInCity(true);
+		assertTrue(sennott.getIsInCity());
+	}
 }

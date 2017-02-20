@@ -10,7 +10,7 @@ public class RoadTest{
 
 	//Assures that an instance of a Road can be made
 	@Test 
-	public void testRoadContructor(){
+	public void testRoadConstructor(){
 		Road fifth = new Road();
 		assertNotNull(fifth);
 	}
@@ -69,5 +69,41 @@ public class RoadTest{
 		assertNull(fifth.getFrom());
 
 	}
+	//Printing out the traversal of a road can have two outcomes
+	//1: If it is between two innercity buildings a single string will come back descrbing it
+	//2: If it is between an innercity building and another city, two strings 
+	//will come back describing the traversal
+	@Test
+	public void testToStrings(){
+		Building mockHillman = mock(Building.class);
+		Building mockUnion = mock(Building.class);
+		Building mockPhilly = mock(Building.class);
 
+		when(mockHillman.getIsInCity()).thenReturn(true);
+		when(mockUnion.getIsInCity()).thenReturn(true);
+		when(mockPhilly.getIsInCity()).thenReturn(false);
+		
+
+		when(mockHillman.getName()).thenReturn("Hillman");
+		when(mockUnion.getName()).thenReturn("Union");
+		when(mockPhilly.getName()).thenReturn("Philadelphia");
+
+		Road fourth = new Road();
+		fourth.setName("Fourth Ave");
+		fourth.setFrom(mockUnion);
+		fourth.setTo(mockPhilly);
+
+		Road phil = new Road();
+		phil.setName("Phil St");
+		phil.setFrom(mockUnion);
+		phil.setTo(mockHillman);
+
+		//Tests a traversal between a city in the city to another city
+		String[] fourthTraversed = fourth.toString();
+		assertEquals(fourthTraversed[0], "heading from Union to Outside City via Fourth Ave.") ;
+		assertEquals(fourthTraversed[1], "has gone to Philadelphia!") ;
+		//Tests a traversal between two in city buildings
+		String[] philTraversed = phil.toStrings();
+	 	assertEquals(philTraversed[0], "heading from Union to Hillman via Phil St.");
+	}
 }

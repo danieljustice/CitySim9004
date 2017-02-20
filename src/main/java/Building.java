@@ -6,7 +6,7 @@ import java.util.*;
 public class Building{
 
 	private String name;
-
+	private boolean isInCity = true;
 	private List<Road> roads = new ArrayList<Road>();
 
 	public String getName(){
@@ -15,6 +15,14 @@ public class Building{
 
 	public void setName(String buildingName){
 		name = buildingName;
+	}
+
+	public boolean getIsInCity(){
+		return isInCity;
+	}
+
+	public void setIsInCity(boolean bool){
+		isInCity = bool;
 	}
 
 	public int numOfRoads(){

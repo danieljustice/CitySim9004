@@ -187,45 +187,6 @@ public class CityTest{
 		pittsburgh.driveCar(testCar2, 1);
 		pittsburgh.driveCar(testCar2, 2);
 	}
-
-	// @Test
-	// public void testPrintTraversal(){
-	// 	City pittsburgh = new City();
-	// 	Building mockBuilding1 = mock(Building.class);
-	// 	Building mockBuilding2 = mock(Building.class);
-	// 	Building mockBuilding3 = mock(Building.class);
-
-	// 	Road mockRoad1 = mock(Road.class);
-	// 	Road mockRoad2 = mock(Road.class);
-	// 	Road mockRoad3 = mock(Road.class);
-	// 	Road mockRoad4 = mock(Road.class);
-		
-	// 	//stubbing in Building.chooseRoad(int), simulates the road array list for each building 
-	// 	when(mockBuilding1.chooseRoad(0)).thenReturn(mockRoad1);
-	// 	when(mockBuilding1.chooseRoad(1)).thenReturn(mockRoad2);
-	// 	when(mockBuilding2.chooseRoad(0)).thenReturn(mockRoad3);
-	// 	when(mockBuilding2.chooseRoad(1)).thenReturn(mockRoad4);
-	// 	when(mockBuilding3.chooseRoad(anyInt())).thenReturn(null);
-	// 	//stubbing in Road.getTo() method
-	// 	when(mockRoad1.getTo()).thenReturn(mockBuilding2);
-	// 	when(mockRoad2.getTo()).thenReturn(mockBuilding3);
-	// 	when(mockRoad3.getTo()).thenReturn(mockBuilding1);
-	// 	when(mockRoad4.getTo()).thenReturn(mockBuilding3);
-	// 	//Will start at mockBuilding1, so it is the only one that needs to mock if it is in the city
-	// 	when(mockBuilding1.getIsInCity()).thenReturn(true);
-	// 	//Stubbing in Building.numOfRoads()
-	// 	when(mockBuilding1.numOfRoads()).thenReturn(2);
-	// 	when(mockBuilding2.numOfRoads()).thenReturn(2);
-	// 	when(mockBuilding3.numOfRoads()).thenReturn(0);
-	// 	//add all of the buildings to the city
-	// 	pittsburgh.addBuilding(mockBuilding1);
-	// 	pittsburgh.addBuilding(mockBuilding2);
-	// 	pittsburgh.addBuilding(mockBuilding3);
-		
-	// }
-	// @Test
-	// public void testDriveCar(){
-
-	// }
+	
 
 }
